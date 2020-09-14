@@ -1,0 +1,14 @@
+{% extends 'Tasks/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="center-column">
+        <h2>Delete Task</h2>
+        <p>Are you sure you want to delete "{{ item }}" task? </p>
+        <a class="btn btn-sm btn-info" href="{% url 'list' %}">Cancel</a>
+        <form method="post" action="#">
+            {% csrf_token %}
+            <input class="btn btn-sm btn-danger btn-info" type="submit" name="Confirm" value="Delete Now!">
+        </form>
+    </div>
+{% endblock content %}
